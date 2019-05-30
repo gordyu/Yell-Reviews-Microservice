@@ -1,3 +1,4 @@
-node_modules
-client/dist/bundle.js
+node_modules/
+.gitignore
+.elasticbeanstalk/
 config.js
