@@ -7,7 +7,7 @@
     "build": "webpack -d --watch",
     "start:dev": "nodemon server/index.js",
     "seed": "node database/seed.js",
-    "start": "node server/index.js"
+    "start": "node server/index.js && node database/seed.js"
   },
   "author": "Gordon Yu",
   "license": "to kill",
