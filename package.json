@@ -1,12 +1,13 @@
 {
   "name": "yell-reviews-service",
   "version": "0.0.1",
-  "description": "",
+  "description": "yell-reviews-service",
   "main": "index.js",
   "scripts": {
-    "a": "webpack -d --watch",
-    "b": "nodemon server/index.js",
-    "c": "node database/seed.js"
+    "build": "webpack -d --watch",
+    "start:dev": "nodemon server/index.js",
+    "seed": "node database/seed.js",
+    "start": "node server/index.js database/seed.js"
   },
   "author": "Gordon Yu",
   "license": "to kill",
