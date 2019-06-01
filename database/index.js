@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/yellreviews', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://gyunit:GreatGPA10mg@cluster0-pdp9t.gcp.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 mongoose.Promise = global.Promise;
