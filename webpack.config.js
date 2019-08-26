@@ -21,3 +21,5 @@ module.exports = {
     ]
   }
 };
+
+process.noDeprecation = true;

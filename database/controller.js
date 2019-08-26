@@ -1,1 +1,1 @@
-/* Ran out of time to refactor server/index.js to here. */
+/* Ran out of time to refactor queries in server.js to here. */

@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:9000/lowestrated")
+    fetch("http://localhost:9002/lowestrated")
       .then(res => res.json())
       .then(
         result => {
@@ -63,7 +63,7 @@ class App extends React.Component {
       return (
         <div>
           <Spinner
-            style={{ width: "45rem", height: "45rem" }}
+            style={{ width: "25rem", height: "25rem" }}
             type="grow"
             color="danger"
           />
@@ -106,7 +106,7 @@ class App extends React.Component {
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem><div onClick={()=>{
-                      fetch("http://localhost:9000/highestratedladies")
+                      fetch("http://localhost:9002/highestratedladies")
                       .then(res => res.json())
                       .then(
                         result => {
@@ -125,14 +125,14 @@ class App extends React.Component {
                     }>Highest Rated Ladies</div>
                     </DropdownItem>
                     <DropdownItem><div onClick={()=>{
-                      fetch("http://localhost:9000/highestratedgents")
+                      fetch("http://localhost:9002/highestratedgents")
                       .then(res => res.json())
                       .then(
                         result => {
                           this.setState({
                             isLoaded: true,
                             items: result,
-                            value: 'Highest Rated Gents'
+                            value: 'Highest Rated Gentlemen'
                           });
                         },
                         error => {
@@ -141,10 +141,10 @@ class App extends React.Component {
                             error
                           });
                         })}
-                    }>Lowest Rated Ladies</div>
+                    }>Highest Rated Gentlemen</div>
                     </DropdownItem>
                     <DropdownItem><div onClick={()=>{
-                      fetch("http://localhost:9000/lowestrated")
+                      fetch("http://localhost:9002/lowestrated")
                       .then(res => res.json())
                       .then(
                         result => {
@@ -221,4 +221,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("reviews"));

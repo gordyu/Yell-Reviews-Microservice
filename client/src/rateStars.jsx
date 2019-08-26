@@ -1,92 +1,48 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-const placeholderStar = <FontAwesomeIcon icon={faStar} />;
-import { Button, Tooltip } from "reactstrap";
+const star = <FontAwesomeIcon icon={faStar} />;
+import { Button, UncontrolledTooltip } from "reactstrap";
 
-class TooltipItem extends React.Component {
-  constructor(props) {
-    super(props);
+export default function rateStars(){
+  return (
+    <span style={{display: "flex", justifyContent: "center", alignItems: "center"
+    }}>
+      <Button color="secondary" id="OneStar">
+        {star}
+      </Button>
+      <UncontrolledTooltip placement="top" target="OneStar">
+        Eek! Methinks not.
+      </UncontrolledTooltip>&nbsp;
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      tooltipOpen: false
-    };
-  }
+      <Button color="secondary" id="TwoStar">
+        {star}
+      </Button>
+      <UncontrolledTooltip placement="top" target="TwoStar">
+        Meh. I've experienced better.
+      </UncontrolledTooltip>&nbsp;
 
-  toggle() {
-    this.setState({
-      tooltipOpen: !this.state.tooltipOpen
-    });
-  }
+      <Button color="secondary" id="ThreeStar">
+        {star}
+      </Button>
+      <UncontrolledTooltip placement="top" target="ThreeStar">
+        A-OK.
+      </UncontrolledTooltip>&nbsp;
 
-  render() {
-    return (
-      <span style={{display: "flex", justifyContent: "center", alignItems: "center"
-      }}>
-        <Button color="secondary" id={'OneStar-' + this.props.id}>
-          {this.props.item.text}
-        </Button>
-        <Tooltip placement={this.props.item.placement} isOpen={this.state.tooltipOpen} target={'OneStar-' + this.props.id} toggle={this.toggle}>
-          Eek! Methinks not.
-        </Tooltip>&nbsp;
+      <Button color="secondary" id="FourStar">
+        {star}
+      </Button>
+      <UncontrolledTooltip placement="top" target="FourStar">
+        Yay! I'm a fan.
+      </UncontrolledTooltip>&nbsp;
 
-        <Button color="secondary" id={'TwoStar-' + this.props.id}>
-          {this.props.item.text}
-        </Button>
-        <Tooltip placement={this.props.item.placement} isOpen={this.state.tooltipOpen} target={'TwoStar-' + this.props.id} toggle={this.toggle}>
-          Meh. I've experienced better.
-        </Tooltip>&nbsp;
+      <Button color="secondary" id="FiveStar">
+        {star}
+      </Button>
+      <UncontrolledTooltip placement="top" target="FiveStar">
+        Woohoo! As good as it gets!
+      </UncontrolledTooltip>&nbsp;
 
-        <Button color="secondary" id={'ThreeStar-' + this.props.id}>
-          {this.props.item.text}
-        </Button>
-        <Tooltip placement={this.props.item.placement} isOpen={this.state.tooltipOpen} target={'ThreeStar-' + this.props.id} toggle={this.toggle}>
-          A-OK.
-        </Tooltip>&nbsp;
-
-        <Button color="secondary" id={'FourStar-' + this.props.id}>
-          {this.props.item.text}
-        </Button>
-        <Tooltip placement={this.props.item.placement} isOpen={this.state.tooltipOpen} target={'FourStar-' + this.props.id} toggle={this.toggle}>
-          Yay! I'm a fan.
-        </Tooltip>&nbsp;
-
-        <Button color="secondary" id={'FiveStar-' + this.props.id}>
-          {this.props.item.text}
-        </Button>
-        <Tooltip placement={this.props.item.placement} isOpen={this.state.tooltipOpen} target={'FiveStar-' + this.props.id} toggle={this.toggle}>
-          Woohoo! As good as it gets!
-        </Tooltip>
-
-      </span>
-    );
-  }
+    </span>
+  );
 }
-
-class ReactStars extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      tooltips: [
-        {
-          placement: 'top',
-          text: placeholderStar
-        }
-      ]
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        { this.state.tooltips.map((tooltip, i) => {
-          return <TooltipItem key={i} item={tooltip} id={i} />;
-        })}
-      </div>
-    );
-  }
-}
-
-export default ReactStars;
