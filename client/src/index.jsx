@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:9002/lowestrated")
+    fetch("http://localhost:${process.env.PORT}/lowestrated")
       .then(res => res.json())
       .then(
         result => {
