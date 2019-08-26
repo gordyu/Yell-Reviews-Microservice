@@ -1,7 +1,7 @@
 const express = require('express');
 const yellReviews = require('./database/index.js');
 const app = express();
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 8081; //why does it keep going to 9002?
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
