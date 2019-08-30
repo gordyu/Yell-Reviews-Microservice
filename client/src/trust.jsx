@@ -28,7 +28,7 @@ export default class Trust extends React.Component {
   render() {
     return (
       <TrustAlert color="secondary" isOpen={this.state.visible} toggle={this.onDismiss}>
-        <span style={{color: "#d32323"}}>{yelpBurst}</span> <b>Your trust is our top concern,</b> so businesses can't pay to alter or remove their reviews.  <a href="#">Learn more.</a>
+        <span style={{color: "#d32323"}}>{yelpBurst}</span> <b>Your trust is our top concern,</b> so businesses can't pay to alter or remove their reviews.  <a href="#" style={{color: "#0073bb"}}>Learn more.</a>
       </TrustAlert>
     );
   }

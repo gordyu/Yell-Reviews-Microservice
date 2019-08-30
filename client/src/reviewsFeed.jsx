@@ -64,23 +64,28 @@ const Feed = (props) => {
                         <br />
                           <div className="list_group">
                             <ListGroup flush style={{fontSize:"15px"}}>
-                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"12px", paddingBottom:"3px"}}>
+                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"12px", paddingBottom:"3px",
+                                color:"#0073bb"}}>
                                   {shareSquare}&nbsp;&nbsp;
                                   Share review
                                 </ListGroupItem>
-                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px"}}>
+                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px",
+                                color:"#0073bb"}}>
                                   {code}&nbsp;
                                   Embed review
                                 </ListGroupItem>
-                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px"}}>
+                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px",
+                                color:"#0073bb"}}>
                                   {award}&nbsp;&nbsp;&nbsp;
                                   Compliment
                                 </ListGroupItem>
-                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px"}}>
+                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px",
+                                color:"#0073bb"}}>
                                   {message}&nbsp;&nbsp;
                                   Send message
                                 </ListGroupItem>
-                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px"}}>
+                                <ListGroupItem tag="a" href="#" style={{lineHeight:"normal",paddingTop:"6px", paddingBottom:"3px",
+                                color:"#0073bb"}}>
                                   {follow}&nbsp;
                                   Follow {review.username}
                                 </ListGroupItem>

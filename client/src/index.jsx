@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 const magnifyingGlass = <FontAwesomeIcon icon={faSearch} />;
+const caretDown = <FontAwesomeIcon icon={faCaretDown} />;
 import {
   InputGroup, InputGroupAddon, InputGroupButtonDropdown, Input, Button, Spinner, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Container, Row, Col } from "reactstrap";
 import Trust from "./trust.jsx";
@@ -39,7 +40,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:${process.env.PORT}/lowestrated")
+    fetch(`http://localhost:${process.env.PORT}/lowestrated`)
       .then(res => res.json())
       .then(
         result => {
@@ -106,7 +107,7 @@ class App extends React.Component {
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem><div onClick={()=>{
-                      fetch("http://localhost:9002/highestratedladies")
+                      fetch(`http://localhost:${process.env.PORT}/highestratedladies`)
                       .then(res => res.json())
                       .then(
                         result => {
@@ -125,7 +126,7 @@ class App extends React.Component {
                     }>Highest Rated Ladies</div>
                     </DropdownItem>
                     <DropdownItem><div onClick={()=>{
-                      fetch("http://localhost:9002/highestratedgents")
+                      fetch(`http://localhost:${process.env.PORT}/highestratedgents`)
                       .then(res => res.json())
                       .then(
                         result => {
@@ -144,7 +145,7 @@ class App extends React.Component {
                     }>Highest Rated Gentlemen</div>
                     </DropdownItem>
                     <DropdownItem><div onClick={()=>{
-                      fetch("http://localhost:9002/lowestrated")
+                      fetch(`http://localhost:${process.env.PORT}/lowestrated`)
                       .then(res => res.json())
                       .then(
                         result => {
@@ -194,7 +195,8 @@ class App extends React.Component {
                         style={{
                           display: "flex",
                           justifyContent: "center",
-                          alignItems: "center"
+                          alignItems: "center",
+                          color: "#0073bb"
                         }}
                       >
                         Start your review of&nbsp;<b>Hack Reactor.</b>
@@ -209,10 +211,24 @@ class App extends React.Component {
           <Feed reviews={this.state.items} />
           <hr />
           <div className="pagnation">
-            Page 1 of 10
-            <span className="pages">
+            <span className="current_page" style={{textAlign: "left"}}>
+              Page 1 of 10
+            </span>
+            <span className="pages" style={{float: "right"}}>
               <Pages />
             </span>
+          </div>
+          <hr />
+          <div className="not_recommended" 
+            style={{
+                  display: "flex",
+                  justifyContent: "left",
+                  alignItems: "center",
+                  color: "#999999",
+          }}>
+            <a href="#" style={{
+              color: "#999999",
+            }}>71 other reivews that are not currently recommended</a>&nbsp;&nbsp;{caretDown}
           </div>
           <hr />
         </div>

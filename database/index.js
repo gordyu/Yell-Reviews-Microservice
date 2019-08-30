@@ -1,8 +1,7 @@
-//const mongoAtlas = require('../config.js');
 const mongoose = require('mongoose');
-mongoose.connect(process.env.mongoAtlas, { useNewUrlParser: true });
+require('dotenv').config(); //required for MONGDB_ATLAS_URI, but not for PORT!
+mongoose.connect(process.env.MONGODB_ATLAS_URI, { useNewUrlParser: true });
 const db = mongoose.connection;
-
 mongoose.Promise = global.Promise;
 
 const yellReviewSchema = new mongoose.Schema({
