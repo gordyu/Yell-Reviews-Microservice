@@ -28,7 +28,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "express": "^4.17.1",
     "mongodb": "^3.2.6",
-    "mongoose": "^5.5.11",
+    "mongoose": "^5.7.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "reactstrap": "^8.0.0",
