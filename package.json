@@ -26,7 +26,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.8.2",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.2.6",
     "mongoose": "^5.5.11",
     "react": "^16.8.6",
